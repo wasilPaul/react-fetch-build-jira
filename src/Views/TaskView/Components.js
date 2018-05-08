@@ -36,7 +36,7 @@ const TasksAssingedToMe = ({data, refresh}) => {
                                     onClick={()=>logic.changeDescription(task._id, refresh)}
                                     className="btn btn-default">Zmień opis</button>
                                 <button
-                                    onClick={()=>logic.logHourToTask()}
+                                    onClick={()=>logic.logHourToTask(task._id, refresh)}
                                     className="btn btn-default">Zaloguj godziny</button>
 
                             </td>

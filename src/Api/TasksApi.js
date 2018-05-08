@@ -126,21 +126,22 @@ export const assigneeTask = task_id => {
 
 export const logHours = task_id => {
 
-  const assignee = prompt('Hours')
+  const logger = prompt('Hours')
 
-  const url = `${TASKS_RESOURCE_PATH}/${task_id}/assign-to/${assignee}`
+  const url = `${TASKS_RESOURCE_PATH}/${task_id}/log-hour`
 
   const fetchConfig = {
     method: 'PATCH',
     body: JSON.stringify({
-      "assignee": assignee
+        "hours": 0,
+        "logger": logger
     }),
     headers: {
       'Content-Type': 'application/json'
     }
   }
 
-  if (assignee && assignee.length) {
+  if (logger && logger.length) {
    return fetch(url, fetchConfig)
     .then(fetchLogger)
   }
